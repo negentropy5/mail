@@ -15,17 +15,17 @@ if(!isset($_SESSION["cnf"])) {
 }
 
 if($_SERVER["REQUEST_METHOD"]==="POST") {
-    $to = '******@******.ne.jp';
-    $from = $post["email"];
+    $to = '*****@hotmail.com';
+    $headers = "From: {$post['email']}";
     $subject = 'メールの送信がありました';
     $body = <<<EOT
-名前: {$post["name"]}
-メールアドレス: {$post["email"]}
+名前: {$post['name']}
+メールアドレス: {$post['email']}
 内容:
-{$post["message"]}
+{$post['message']}
 EOT;
 
-    mb_send_mail($to, $subject, $body, "From: {$form}");
+    mb_send_mail($to, $subject, $body, $headers);
 
     unset($_SESSION["cnf"]);
     session_destroy();
