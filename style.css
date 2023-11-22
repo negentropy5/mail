@@ -1,0 +1,67 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+    font-family: sans-serif;
+    color: #333;
+}
+.container {
+    width: calc(100% - 16px);
+    max-width: 480px;
+    margin: 0 auto;
+    padding-top: 8px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+h1 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+.err {
+    font-size: 14px;
+    color: #f50967;
+}
+label {
+    width: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 5px;
+}
+input {
+    width: 0;
+    flex: 1;
+}
+textarea {
+    width: 100%;
+}
+input, textarea, button, .btns a  {
+    color: #333;
+    font-size: 16px;
+    background: #fff;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.name, .email, .message {
+    margin-bottom: 8px;
+}
+.item {
+    color: #4285f4;
+}
+.btns {
+    display: flex;
+    gap: 5px;
+}
+.btns a {
+    text-decoration: none;
+}
+button, .btns a {
+    padding: 5px 30px;
+    cursor: pointer;
+}
+
+.result {
+    text-align: center;
+}
