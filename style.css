@@ -7,16 +7,16 @@ body {
     width: calc(100% - 16px);
     max-width: 480px;
     margin: 0 auto;
-    padding-top: 8px;
+    padding-top: 16px;
 }
 nav {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 16px;
 }
 h1 {
     font-size: 20px;
     font-weight: normal;
-    margin-bottom: 8px;
 }
 .err {
     font-size: 14px;
@@ -26,7 +26,10 @@ label {
     width: 100%;
     margin-bottom: 8px;
     display: flex;
-    gap: 5px;
+    align-items: center;
+}
+label > span {
+    width: 24px;
 }
 input {
     width: 0;
@@ -34,6 +37,8 @@ input {
 }
 textarea {
     width: 100%;
+    vertical-align: bottom;
+    margin-bottom: 8px;
 }
 input, textarea, button, .btns a  {
     color: #333;
@@ -52,7 +57,7 @@ input, textarea, button, .btns a  {
 }
 .btns {
     display: flex;
-    gap: 5px;
+    gap: 16px;
 }
 .btns a {
     text-decoration: none;
@@ -60,6 +65,12 @@ input, textarea, button, .btns a  {
 button, .btns a {
     padding: 5px 30px;
     cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+button:active, .btns a:active {
+    position: relative;
+    top: 2px;
+    box-shadow: 0px 0px 0px rgba(0,0,0,.5);
 }
 
 .result {

@@ -40,39 +40,45 @@ if($_SERVER["REQUEST_METHOD"]==="GET") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
     <title>お問い合わせ</title>
+    <link rel="icon" href="../inyou.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <nav>
-            <h1>お問い合わせフォーム</h1>
-            <a href="../"><i class="fa-solid fa-house"></i> Home</a>
+            <h1><i class="fa-regular fa-envelope"></i> お問い合わせ</h1>
+            <a href="../upload" style="color:#4285f4;">
+                <i class="fa-brands fa-octopus-deploy"></i>uploader
+            </a>
         </nav>
 
         <form method="post">
+            <!-- 名前 -->
             <?php if(isset($err["name"])): ?>
                 <div class="err"><?= $err["name"] ?></div>
             <?php endif ?>
             <label>
-                <span>名前＿:</span>
-                <input type="text" name="name" value="<?= h($post["name"] ?? '') ?>">
+                <span><i class="fa-solid fa-user"></i></span>
+                <input type="text" name="name" value="<?= h($post["name"] ?? '') ?>" placeholder="Your name">
             </label>
-
+            
+            <!-- メールアドレス -->
             <?php if(isset($err["email"])): ?>
                 <div class="err"><?= $err["email"] ?></div>
             <?php endif ?>
             <label>
-                <span>メール:</span>
-                <input type="text" name="email" value="<?= h($post["email"] ?? '') ?>">
+                <span><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" name="email" value="<?= h($post["email"] ?? '') ?>"  placeholder="Your e-mail">
             </label>
-    
+
+            <!-- 本文 -->
             <?php if(isset($err["message"])): ?>
                 <div class="err"><?= $err["message"] ?></div>
             <?php endif ?>
-            <span>内容＿:</span>
+            <span><i class="fa-solid fa-message"></i></span>
             <textarea name="message" rows="10"><?= h($post["message"] ?? '') ?></textarea>
     
-            <button>確認</button>
+            <button>確認 <i class="fa-solid fa-paper-plane"></i></button>
         </form>
     </div>
 </body>
